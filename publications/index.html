@@ -4,19 +4,13 @@
 
 <html>
 
-  <head>
-    <title>Ryan Carlson :: Publications</title>
-    <LINK REL=StyleSheet HREF="/css/main.css" TYPE="text/css" MEDIA=screen>
-    <LINK REL="Shortcut Icon" HREF="/icon.ico">
-  </head>
+{% include header.html param="Publications" %}
 
   <body>
 
     <div id="page">
 
-      {% include title.html %}
-      <!--#include virtual="title.html" -->
-      <!-- <?php require('title.html'); ?> -->
+      {% include nav.html %}
 
       <div id="content">
         <h2>:: Publications</h2>
@@ -58,7 +52,5 @@
   </body>
 
       {% include footer.html %}
-      <!--#include virtual="footer.html" -->
-      <!-- <?php require('footer.html'); ?> -->
 
 </html>
