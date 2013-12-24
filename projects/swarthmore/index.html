@@ -1,0 +1,83 @@
+---
+---
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+  <head>
+    <title>Ryan Carlson :: Swarthmore Projects</title>
+    <LINK REL=StyleSheet HREF="/css/main.css" TYPE="text/css" MEDIA=screen>
+    <LINK REL="Shortcut Icon" HREF="/icon.ico">
+  </head>
+
+  <body>
+
+    <div id="page">
+
+      {% include title.html %}
+      <!--#include virtual="title.html" -->
+      <!-- <?php require('title.html'); ?> -->
+
+      <div id="content">
+        <h2>:: Swarthmore Projects</h2>
+        Upper level CS classes at Swarthmore end the semester with a self-directed project, normally with a partner or two. I've attached the papers that resulted from these projects. Classes are listed chronologically, starting with the most recent.</p>
+
+        <h3>Research</h3>
+
+        <p>
+        I had the opportunity of working for the summers of my sophomore and junior years at the Swarthmore CS department with <a href="http://cs.swarthmore.edu/~adanner/" target=_blank>Andrew Danner</a>. An informal abstract summarizing our work is below.
+        </p>
+
+        <p>
+        One application of Geographic Information System (GIS) data is the hydrologic analysis of gridded Digital Elevation Models (DEMs).  Using Light Detection and Ranging (LIDAR) technology, large, hi-resolution elevation data can be collected.  In addition to terrain, the data might include smaller features like trees, buildings, and bridges.  Our research goals were to automate detection of bridges, which impede watershed analysis, and to alter the terrain to yield hydrologically correct DEMs.
+        </p>
+
+        <p>A machine learning algorithm (<a href="http://en.wikipedia.org/wiki/Adaboost" target=_blank>AdaBoost</a>) was used to combine sets of simple filters that detect local bridge-like features. It takes features describing hand-labeled positive and negative training samples as input. The algorithm combines these features into a powerful bridge classifier. This classifier is then used on unlabeled test data and outputs a grid that assigns to each likely bridge location a numerical confidence score. Using a training set of about 600 hand-tagged positive and negative samples, the classifier correctly classifies bridges about 95% of the time.  Once bridges are classified, a two-pass conditioning approach is used to remove the bridges from the terrain data.  The first pass makes large cuts that result in hydrologically correct but blocky terrain.  Using the flow models made available by the first pass, a carving algorithm is implemented that makes smaller, more precise cuts in the original terrain. The river networks extracted from the minimally conditioned terrain show marked improvement over the original terrain.  Future work may involve parallelizing the algorithm, which relies on independent classified regions making it an excellent candidate for parallelization.
+        </p>
+
+        <p>
+        We also wrote a paper that was accepted to the <a href="http://acmgis2010.cs.ucsb.edu/" target=_blank>2010 ACM GIS conference</a>. (<a href="docs/RyanCarlson_acmgis.pdf">paper</a>)
+
+        <h3><a href="http://cs.swarthmore.edu/~richardw/cs91" target=_blank>CS91</a> - Software Engineering: iOS Development</h3> 
+        <p>
+        Our project is a music player called <b>OpenHouse</b> centered around an instant playlist. A typical user starts out as the DJ, adding songs to his or her playlist. Nearby users can then join as guests, view the DJ's library and current playlist, and request songs from it. The DJ can see the most requested songs and choose to add them to the playlist. While the player works great as a stand-alone music player, we designed it for parties or road trips where multiple users want to have some say over the music that's playing. You can grab it on the <a href="http://itunes.apple.com/app/openhouse-music-player/id447004191?mt=8" target=blank>App Store</a>.
+        </p>
+
+        <h3><a href="http://cs.swarthmore.edu/~charlie/cs97/f10/" target=_blank>CS97</a> - Databases</h3> 
+        <p>
+        For our CS senior capstone course, a partner and I implemented a better query optimizer in PostgreSQL. The current system assumes independence between attributes when calculating selectivity (the fraction of rows a query returns), which is often wrong. Consider, for example, that education and income are highly correlated, or that the model implies the make of a car. Using this independence assumption, selectivity is often underestimated, which can impact runtimes. Our approach uses a two-dimensional histogram to better estimate selectivity. We show that it would not be difficult for PostegreSQL developers to implement more general multidimensional histograms without great changes to the existing code base.  (<a href="docs/RyanCarlson_databases.pdf">paper</a>)
+        </p>
+
+        <h3><a href="http://www.cs.swarthmore.edu/~richardw/cs65/index.php" target=_blank>CS65</a> - Natural Language Processing</h3>
+        <p>
+        We implemented a minimally supervised learning algorithm as a layer over OCR output. We used GOCR, which outputs an unknown marker when it is unsure of a character. Our algorithm first learns a set of characters that are commonly confused by our program (e.g. o,0). It then combines that information with the unknown markers to come up with possible words, and uses Google n-gram counts to identify the most likely candidate given the syntactic context. (<a href="docs/RyanCarlson_nlp.pdf">paper</a>)
+        </p>
+
+        <h3><a href="http://www.cs.swarthmore.edu/~newhall/cs87/s10/" target=_blank>CS87</a> - Parallel &amp; Distributed Computing</h3> 
+        <p>
+        GPGPU programming is simultaneously really cool and really difficult. We looked at some common use cases of CUDA and implemented a very high-level language with a graphical frontend that takes advantage of the graphics card while keeping the details hidden. Our interface provides a drag-and-drop interface for the user to create programs using the paradigms of a GPGPU programmer. (<a href="docs/RyanCarlson_parallel.pdf">paper</a>)
+        </p>
+
+        <h3><a href="http://web.cs.swarthmore.edu/~meeden/cs81/s10/" target=_blank>CS81</a> - Adaptive Robotics</h3> 
+        <p>
+        We were interested to see if object tracking could be done without any explicit edge detection. We implemented a tracking algorithm using Growing Neural Gas that simultaneously tracks multiple objects.  As a proof of concept we did some initial interfacing with an AIBO robot to direct its head to move with an object. (<a href="docs/RyanCarlson_robotics.pdf">paper</a>)
+        </p>
+
+        <h3><a href="http://www.cs.swarthmore.edu/~eeaton/teaching/cs63/" target=_blank>CS63</a> - Artificial Intelligence</h3>
+        <p>
+        This class had everyone competing at a single task: given a simulation of an emergency situation, our (virtual) robot was tasked with triaging victims stranded in a room. Our robot had the ability to sense a few spaces around itself and pick up/carry/put down victims. There were four major parts of this project. We used A* search to reach victims. We implemented a room detection algorithm to make sure we didn't check the same room for victims twice. We adapted AdaBoost to check if victims, who had dynamic health stats, were worth saving. And we generated a probabilistic model to track wandering victims.  (<a href="docs/RyanCarlson_ai.pdf">paper</a>)
+        </p>
+
+      </div>
+        
+
+    </div>
+
+  </body>
+
+      {% include footer.html %}
+      <!--#include virtual="footer.html" -->
+      <!-- <?php require('footer.html'); ?> -->
+
+</html>
+
