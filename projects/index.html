@@ -1,0 +1,87 @@
+---
+---
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+  <head>
+    <title>Ryan Carlson :: Projects</title>
+    <LINK REL=StyleSheet HREF="/css/main.css" TYPE="text/css" MEDIA=screen>
+    <LINK REL="Shortcut Icon" HREF="icon.ico">
+  </head>
+
+  <body>
+
+    <div id="page">
+
+      {% include title.html %}
+      <!--#include virtual="title.html" -->
+      <!-- <?php require('title.html'); ?> -->
+
+      <div id="content">
+        <h2>:: Projects</h2>
+        <p>
+        These are a few side projects that I've worked on in my spare time. I've also included some projects I worked on in undergrad <a href="swarthmore_projects.shtml">here</a>.
+        </p>
+
+        <h3>Gitit</h3>
+        This is actually just a single small bash script that performs batch actions on a set of git repositories. I have a whole bunch that I like to keep in sync between my machines (e.g. config files, code I'm working on) and this is helpful to run before I shut my machine for the night / after work. It makes it easy to pull from all of my repos, or commit and push everything that I was just working on. It's still a work in progress (at this point you'll have to edit the script to identify your specific repos), so for now you can just download it <a href="docs/gitit.sh">here</a>. Soon I'll put it in a proper place.
+
+        <h3>Webcam + AdaBoost</h3>
+        <p>
+        My family has a vacation home in Northeastern Pennsylvania equipped with several webcams hooked up to check if we have any unwanted visitors while we're not there. Simple software exists that starts recording when the scenery changes sufficiently, but it relies on very simple heuristics like how many pixels have changed from one moment to the next. Since these heuristics are not very discriminating, the number of images we must sift through amounts to hours every week. I have adapted the AdaBoost implementation from my undergrad research (see <a href="swarthmore_projects.shtml">here</a>) to allow a user to train the algorithm to identify only "important" events, for whatever definition of "important" the user would like.
+        </p>
+
+        <p>
+        The application provides friendly <a href="http://qt.nokia.com/" target=_blank>Qt</a> interfaces for training and testing images. While this is of course more involved then setting up a simple filter, it can greatly reduce the number of images one needs to go through.
+        </p>
+
+        <p>
+        The program is implemented in C++. I haven't actively developed this in a while and haven't yet posted the source. However, if you're interested, send me an email and I'd be happy to send you the source. As soon as I have some time, I'll post the source and maybe provide a tutorial if there's interest.
+        </p>
+
+        <h3>KitchenDB</h3>
+        <p>
+        This was my first foray into combining Qt libraries and SQL queries. It provides a simple and hopefully intuitive graphical interface for keeping track of all the food and other items in the kitchen. While admittedly not the most useful application if the program is running on the home computer next to your fridge, I see it as a handy tool for the tablet-toting or smartphone-carrying population. Imagine going to the grocery store and remembering that you meant to check if you still have any oregano. If you have the program installed (and have been updating it) you can check right then and there. Looking way in the future, it'd be great to have an application sync with RFID tags attached to the food items in the refrigerator and cabinets. This would be a less tedious way of keeping track of everything in the kitchen.
+        </p>
+
+        <p>
+        The program is implemented in C++. Source code can be found <a href="http://gitorious.org/kitchendb" target=_blank>here</a>.
+        </p>
+
+        <h3>WPA Supplicant Configuration Manager</h3>
+        <p>
+        While the network managers provided by GNOME and KDE are easy to set up, they can be a bit finicky, to say the least. Using the wpa_supplicant utility directly can lead to more robust connections, but has a steep learning curve. Additionally, managing multiple networks in a single wpa_supplicant.conf file is a nightmare. I wrote the WPA Supplicant Configuration Manager to ease the learning curve and make the organization of networks more logical and manageable.
+        </p>
+
+        <p>
+        The manager checks which networks are available, and which of those the user has already created config files for. If the user chooses a network without an associated config file, the manager opens up a template for the user to fill out. Otherwise, the config file is copied to the default wpa_supplicant.conf path at which point the user can connect to the new network. The program is a small python script with a nice curses interface to choose a network.
+        </p>
+
+        <p>
+        You can download the source <a href="http://sourceforge.net/projects/wpascm/" target=_blank>here</a>.
+        </p>
+
+        <h3>Anagram Generator</h3>
+        <p>
+        I am very bad at Scrabble. My mother is very good at Scrabble. Shortly after learning my first bit of C in sophomore year of college, I decided to write a small program to create anagrams from the letters in a Scrabble game. It's coded in C, not C++, so there are no Boost program options, no CMake, no objects to speak of. I grabbed a hash table implementation that I found online, and proceeded to write a rather messy and poorly-organized program. It works, is well commented, and (best of all) passes through valgrind without a scratch. Oh, and it makes Text Twist really easy.
+        </p>
+
+        <p>
+        Fun fact: if you lean really heavily on list comprehensions, you can write the basic functionality of this project in <a href="docs/anagrampy.html">4 lines of python code</a>. 
+        </p>
+
+        <p>
+        Grab the source if you're interested <a href="http://sourceforge.net/projects/anagramgen/" target=_blank>here</a>.
+      </div>
+        
+
+    </div>
+
+  </body>
+
+      {% include footer.html %}
+      <!--#include virtual="footer.html" -->
+      <!-- <?php require('footer.html'); ?> -->
+
+</html>

@@ -1,160 +1,88 @@
-/*****************************************************************************/
-/*
-/* Common
-/*
-/*****************************************************************************/
-
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html, body { height: 100%; }
-
 body {
-  background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
-  text-align: center;
+/*   background-color:#E0E0E0; /* light grey */
+/*  background-color:#D3D3D3; */ /* another light grey */
+/*  background-color:#E6E6FA; /* lavender */
+  background-color:#f8f8ff; /* ghost white */
+
+  font-size:12pt;
+  font-family:Verdana,Helvetica,Arial;
+  margin:0;
+  padding:0;
+  color:#333333; /* dark green */
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
-
-h1 { margin-bottom: 1em; }
-p { margin: 1em 0; }
-
-a         { color: #00a; }
-a:hover   { color: #000; }
-a:visited { color: #a0a; }
-
-/*****************************************************************************/
-/*
-/* Home
-/*
-/*****************************************************************************/
-.posts {
-  list-style-type: none;
-  margin-bottom: 2em;
+#header {
+  height:50px;
 }
 
-.posts li {
-  line-height: 1.75em;
+#page {
+  text-align:left;
+  margin:auto;
+  padding:auto;
 }
 
-.posts span {
-  color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
-  font-size: 80%;
+#name {
+  width:500px;
+  text-align:left;
+  float:left;
+  min-height:60px;
+  font-size:35pt;
 }
 
-/*****************************************************************************/
-/*
-/* Site
-/*
-/*****************************************************************************/
-
-.site {
-  font-size: 115%;
-  text-align: justify;
-  width: 42em;
-  margin: 3em auto 2em;
-  line-height: 1.5em;
+#email {
+  font-size:14pt;
+  padding-left:2pt;
 }
 
-.header a {
-  font-weight: bold;
-  text-decoration: none;
+#sidebar {
+  padding-top:10px;
+  float:right;
+  width:110px;
+  line-height:0pt;
 }
 
-.title {
-  display: inline-block;
-  margin-bottom: 2em;
+#sidebar a {
+  padding-top:16px;
+  height:10px;
+  display:block;
+  font-size:16px;
+  font-weight:bold;
+  text-align:right;
+  }
+
+footer {
+	font-size: x-small;
+	color:black;
+	text-align:center;
+	clear:both;
 }
 
-.title a {
-  color: #a00;
+#content {
+  padding-left:2px;
+  text-align:justify;
+  float:left;
+  line-height:14pt;
+  padding-bottom:10px;
 }
 
-.title a:hover {
-  color: #000;
+/* 
+ * NOTE: this must go before #email otherwise 
+ *       it overwrites the #email properties 
+ */
+#name a {
+    color:inherit;
+    text-decoration:none;
 }
 
-.header a.extra {
-  color: #aaa;
-  margin-left: 1em;
+#sidebar a, #content a, #email a { 
+  color:#4682B4; /* steel blue */
+  text-decoration:none;
 }
 
-.header a.extra:hover {
-  color: #000;
+#sidebar a:hover, #email a:hover {
+  color:#2F4F4F; /* dark slate gray */
 }
 
-.meta {
-  color: #aaa;
-}
-
-.footer {
-  font-size: 80%;
-  color: #666;
-  border-top: 4px solid #eee;
-  margin-top: 2em;
-  overflow: hidden;
-}
-
-.footer .contact {
-  float: left;
-  margin-right: 3em;
-}
-
-.footer .contact a {
-  color: #8085C1;
-}
-
-.footer .rss {
-  margin-top: 1.1em;
-  margin-right: -.2em;
-  float: right;
-}
-
-.footer .rss img {
-  border: 0;
-}
-
-/*****************************************************************************/
-/*
-/* Posts
-/*
-/*****************************************************************************/
-
-/* standard */
-.post pre {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .4em;
-}
-
-.post ul, .post ol {
-  margin-left: 1.35em;
-}
-
-.post code {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .2em;
-}
-
-.post pre code {
-  border: none;
-}
-
-/* terminal */
-.post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
-}
-
-.post pre.terminal code {
-  background-color: #333;
+#content, #page {
+  width:800px;
 }
