@@ -1,36 +1,29 @@
 ---
 ---
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
 
 {%include header.html param="Home" %}
+
+
+  <div id="container">
 
   <body>
 
     <div id="page">
 
       {% include nav.html %}
-      <!--#include virtual="_includes/title.html" -->
-      <!-- <?php require('title.html'); ?> -->
       
       <div id="content">
         <h2>:: Home</h2>
         <img src="ryan.jpg" alt="ryan picture" align="left" style="padding-right:10px" />
+        <p>
+        I recently graduated with an MS in <a href="http://www.lti.cs.cmu.edu" target=_blank>Language Technologies</a> from Carnegie Mellon University. In February I'll be starting a new role as a research programmer at <a href="http://www.carnegielearning.com/research/" target=_blank>Carnegie Learning</a>.
+        </p>
 
-        <p>
-        I am a PhD student at <a href="http://www.cmu.edu" target=_blank>Carnegie Mellon University</a> in the <a href="http://www.lti.cs.cmu.edu" target=_blank>Language Technologies Institute</a> working with <a href="http://www.cs.cmu.edu/~cprose/" target=_blank>Carolyn Ros&eacute;</a> and <a href="http://pact.cs.cmu.edu/koedinger.html" target=_blank>Ken Koedinger</a>. I am also a fellow in the <a href="http://www.cmu.edu/pier" target=_blank>Program for Interdisciplinary Education Research</a> at CMU. 
-        </p>
-        
-        <p>
-        I am interested in problems relating to <a href="http://en.wikipedia.org/wiki/Natural_language_processing" target=_blank>natural language processing</a> and education. My current research focuses on using data mining techniques to analyze natural language in discussion forums of online courses. Our goal is to understand how these discussions impact students and their learning outcomes, and how to help instructors develop more effective courses.
-        </p>
-        
         <p>
         On the rare occasion I'm not at my computer and have some free time, I really enjoy bowling. I have my own ball and everything.
         </p>
-
-        <!-- This past Spring I graduated with Honors from <a href="http://www.swarthmore.edu" target=_blank>Swarthmore College</a> with a major in <a href="http://www.cs.swarthmore.edu" target=_blank>Computer Science</a> and a minor in Cognitive Science. -->
 
       </div>
       
@@ -38,9 +31,8 @@
 
   </body>
 
-      {% include footer.html %}
-      <!--#include virtual="footer.html" -->
-      <!-- <?php require('footer.html'); ?> -->
+  </div>
 
+      {% include footer.html %}
 
 </html>
