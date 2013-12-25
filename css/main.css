@@ -1,3 +1,7 @@
+html, body, #container {
+    height:100%;
+}
+
 body {
 /*   background-color:#E0E0E0; /* light grey */
 /*  background-color:#D3D3D3; */ /* another light grey */
@@ -12,14 +16,19 @@ body {
   color:#333333; /* dark green */
 }
 
+body > #container {
+    height:auto;
+    min-height:100%;
+}
+
 #header {
   height:50px;
 }
 
 #page {
   text-align:left;
-  margin:auto;
-  padding:auto;
+  margin:auto; 
+  padding:auto; 
 }
 
 #name {
@@ -40,6 +49,7 @@ body {
   float:right;
   width:110px;
   line-height:0pt;
+  height:120px;
 }
 
 #sidebar a {
@@ -51,19 +61,24 @@ body {
   text-align:right;
   }
 
-footer {
-	font-size: x-small;
-	color:black;
-	text-align:center;
-	clear:both;
-}
+
+#footer {
+  clear:both;
+  position:relative;
+  z-index:10;
+  height:3em; /* height of footer */
+  margin-top:-3em;
+  font-size: x-small;
+  color:black;
+  text-align:center;
+} 
 
 #content {
   padding-left:2px;
-  text-align:justify;
   float:left;
+  text-align:justify;
   line-height:14pt;
-  padding-bottom:10px;
+  padding-bottom:3em;
 }
 
 /* 
@@ -75,7 +90,7 @@ footer {
     text-decoration:none;
 }
 
-#sidebar a, #content a, #email a { 
+#sidebar a, #content a, #email a, #footer a { 
   color:#4682B4; /* steel blue */
   text-decoration:none;
 }
