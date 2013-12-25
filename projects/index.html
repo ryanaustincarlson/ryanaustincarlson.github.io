@@ -1,21 +1,10 @@
 ---
+layout: default
+title: Projects
 ---
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-<html>
-
-{% include header.html param="Projects" %}
-
-  <div id="container">
-
-  <body>
-
-    <div id="page">
-
-      {% include nav.html %}
 
       <div id="content">
-        <h2>:: Projects</h2>
+        <h2>:: {{ page.title }}</h2>
         <p>
         These are a few side projects that I've worked on in my spare time. I've also included some projects I worked on in undergrad <a href="/projects/swarthmore/">here</a>.
         </p>
@@ -70,14 +59,3 @@
         <p>
         Grab the source if you're interested <a href="http://sourceforge.net/projects/anagramgen/" target=_blank>here</a>.
       </div>
-        
-
-    </div>
-
-  </body>
-
-  </div>
-
-      {% include footer.html %}
-
-</html>
