@@ -50,8 +50,12 @@ ga('send', 'pageview');
 </div>
 
 <div id="footer"> 
-    <p>
-    &copy; 2014 Ryan Carlson &mdash; Built with <a href="http://jekyllrb.com/" target=_blank>Jekyll</a> &mdash; Hosted on <a href="http://pages.github.com" target=_blank>GitHub Pages</a>
+    <p> &copy;
+    <script>
+        var year = new Date().getFullYear();
+        document.write(year)
+    </script>
+    Ryan Carlson &mdash; Built with <a href="http://jekyllrb.com/" target=_blank>Jekyll</a> &mdash; Hosted on <a href="http://pages.github.com" target=_blank>GitHub Pages</a>
     </p> 
 </div>
 
