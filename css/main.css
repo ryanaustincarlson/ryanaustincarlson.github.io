@@ -7,11 +7,10 @@ body {
 /*  background-color:#D3D3D3; */ /* another light grey */
 /*  background-color:#E6E6FA; /* lavender */
 /*  background-color:#f8f8ff; /* ghost white */
-  background-color:white
+  background-color:white;
 
-  font-size:12pt;
   font-family:Verdana,Helvetica,Arial;
-  margin:0;
+  margin:0; 
   padding:0;
   color:#333333; /* dark green */
 }
@@ -36,27 +35,27 @@ body > #container {
   text-align:left;
   float:left;
   min-height:60px;
-  font-size:35pt;
+  font-size:3em;
 }
 
 #email {
-  font-size:14pt;
+  font-size:0.45em;
   padding-left:2pt;
 }
 
 #sidebar {
   padding-top:10px;
   float:right;
-  width:110px;
+  width:200px;
   line-height:0pt;
   height:120px;
 }
 
 #sidebar a {
   padding-top:16px;
-  height:10px;
+  height:0.7em;
   display:block;
-  font-size:16px;
+  font-size:1.2em;
   font-weight:bold;
   text-align:right;
   }
@@ -73,11 +72,15 @@ body > #container {
   text-align:center;
 } 
 
+h2 {
+  line-height:0;
+}
+
 #content {
+  font-size:1.1em;
   padding-left:2px;
   float:left;
   text-align:justify;
-  line-height:14pt;
   padding-bottom:3em;
 }
 
