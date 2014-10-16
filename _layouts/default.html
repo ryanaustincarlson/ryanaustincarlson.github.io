@@ -12,14 +12,14 @@
 
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-46696023-1', 'ryanaustincarlson.com');
-       ga('send', 'pageview');
+     ga('create', 'UA-46696023-1', 'ryanaustincarlson.com');
+     ga('send', 'pageview');
 
-   </script>
+ </script>
 
 </head>
 
@@ -28,14 +28,15 @@
 
     <body>
 
+        <div id="header">
+            <a href="javascript:void(0);" onclick="openMenu()" style="width:100%;height:inherit;position:absolute;top:0px;right:0px;"/></a>
+            <a id="menu" href="javascript:void(0);" onclick="openMenu()"/>menu</a>
+        </div>
+
         <div id="page">
 
-            <div id="header"></div>
             <div id="name">
                 <b><a href="/">Ryan Carlson</a></b>
-                <!-- <div id="sidebar-small"> -->
-                <button id="reveal-sidebar">v</button>
-                <!-- </div> -->
                 <div id="email">
                     <a href="mailto:ryan.austin.carlson@gmail.com">ryan.austin.carlson@gmail.com</a>
                 </div>
@@ -46,7 +47,7 @@
                 <a href="/">Home</a>
                 <a href="/projects">Projects</a>
                 <a href="/publications">Publications</a>
-                <a href="/docs/RyanCarlson_resume.pdf"><font size=-2>(pdf)</font> Resume</a>
+                <a href="/docs/RyanCarlson_resume.pdf"><span id="pdf-link">(pdf)</span> Resume</a>
             </div>
 
             <div id="content">
@@ -57,76 +58,51 @@
 
                     jQuery.fn.rotate = function(degrees) {
                         $(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
-                           '-moz-transform' : 'rotate('+ degrees +'deg)',
-                           '-ms-transform' : 'rotate('+ degrees +'deg)',
-                           'transform' : 'rotate('+ degrees +'deg)'});
+                         '-moz-transform' : 'rotate('+ degrees +'deg)',
+                         '-ms-transform' : 'rotate('+ degrees +'deg)',
+                         'transform' : 'rotate('+ degrees +'deg)'});
                     };
+
+                    var openMenu = function() {
+                        console.log("collapsed: " + collapsed);
+
+                        jQuery("#content").stop();
+                        jQuery('#sidebar').slideToggle();
+
+                        collapsed = !collapsed;
+                    }
 
                     jQuery(document).ready(function () {
 
-                            // alert($(window).width())
+                        $(window).resize(function() {
 
-                            $(window).resize(function() {
-                                var em = $(window).width() / parseFloat($("body").css("font-size"));
-                                console.log("resize to " + em);
+                            /* console.log("display: " + $("#using-small-screen").css("display")); */
 
-                                var display = 'block';
-                                if (em < 40 && collapsed)
+                            var display = 'block';
+                            if ($("#using-small-screen").css("display") != 'none')
+                            {
+                                console.log("menu setup")
+                                if (collapsed)
                                 {
                                     display = 'none';
                                 }
-                                
-                                $('#sidebar').css("display", display);
-                            });
-
-
-                            /* Open the menu */
-                            jQuery("#reveal-sidebar").click(function () {
-
-                                console.log("collapsed: " + collapsed);
-
-                                var margin = collapsed ? "200px" : "1";
-
-                                jQuery("#content").stop();
-
-                                jQuery('#sidebar').slideToggle();
-
-                                $(this).rotate(collapsed ? 180 : 0);
-
-                                collapsed = !collapsed;
-                            });
-
-                            /* close the menu */
-                            jQuery("#contentLayer").click(function () {
-
-                                /* enable all scrolling on mobile devices when menu is closed */
-                                jQuery('#container').unbind('touchmove');
-
-                                /* set margin for the whole container back to original state with a jquery UI animation */
-                                jQuery("#container").animate({"marginTop": ["1", 'easeOutExpo']}, {
-                                    duration: 700,
-                                    complete: function () {
-                                        jQuery('#content').css('width', 'auto');
-                                        jQuery('#contentLayer').css('display', 'none');
-                                        /* jQuery('nav').css('opacity', 0); */
-                                        jQuery('#content').css('min-height', 'auto');
-                                    }
-                                });
-                            });
+                            }
+                            $('#sidebar').css("display", display);
 
                         });
+                    });
 
+                </script>
 
+                {{ content }}
 
-</script>
+            </div>
 
-{{ content }}
+        </div>
 
-</div>
+        <span id="using-small-screen" />
 
-</div>
-
-</body>
+    </body>
 
 </div>
 
