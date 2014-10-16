@@ -98,8 +98,12 @@ body > #container {
     text-align:right;
   }
 
-  #pdf-link {
+  #pdf-link-bigscreen {
     font-size:0.6em;
+  }
+
+  #pdf-link-smallscreen {
+    display: none;
   }
 
   #ryan-image {
@@ -174,7 +178,11 @@ body > #container {
     padding-top:auto;
   }
 
-  #pdf-link {
+  #pdf-link-bigscreen {
+    display: none;
+  }
+
+  #pdf-link-smallscreen {
     font-size:3vw;
   }
 
